@@ -125,3 +125,49 @@ div{
     outline: 3px solid #a8d1db;
 }
 /* --------------------------------------*/
+
+
+/*------------- dashboard design -------------*/
+
+.dashboard-top{
+    margin: 0px 20px 0px 30px;
+}
+.dashboard-top h1{
+    margin-left: 40px;
+    font-size: 35px;
+}
+.dashboard-items .item-text{
+    float: left;
+    margin-left: 30px;
+}
+.item-text p{
+    font-size: 24px;
+    margin-bottom: -10px;
+}
+.item-text h2{
+    font-size: 30px;
+}
+.dashboard-items i{
+    float: right;
+    font-size: 50px;
+    color: #808080;
+    margin: 40px 30px;
+}
+
+/* --------------------------------------*/
+
+/*------------- dashboard design -------------*/
+/* --------------------------------------*/
+
+.dashboard-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    height: 150px;
+}
+.dashboard-items{
+    margin-left: 40px;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    border: 1px solid lightgray;
+}
