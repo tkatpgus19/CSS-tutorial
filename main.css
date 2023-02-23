@@ -1,7 +1,6 @@
 body {
     margin: 0px;
     background-color: #f7f7f7;
-    overflow: hidden;
 }
 
 div {
@@ -10,9 +9,9 @@ div {
 
 /*------------- sidebar design -------------*/
 .sidebar {
-    position: absolute;
+    position: fixed;
     width: 200px;
-    height: 100%;
+    height: 100vh;
     color: white;
     font-size: 22px;
     transform: translateX(-150px);
@@ -66,6 +65,7 @@ div {
     border: black 1px lightgray;
     background-color: white;
     box-shadow: 3px 3px lightgray;
+    overflow: hidden;
 }
 
 .navbar-input {
@@ -81,7 +81,7 @@ div {
     padding-left: 10px;
     border: 1px solid lightgray;
     border-radius: 5px;
-    transition: 1s all;
+    transition: 1s width;
 }
 
 .navbar-input button {
@@ -138,6 +138,19 @@ div {
     width: 500px;
     border: 1px solid lightgray;
     outline: 3px solid #a8d1db;
+}
+
+.navbar-notifications .mNavbar-list{
+    visibility:hidden;
+    position: absolute;
+    top: 10px;
+    right: -100px;
+    cursor: pointer;
+    border: 1px solid lightgray;
+}
+.mNavbar-list i{
+    font-size: 30px;
+    margin: 10px 20px;
 }
 
 /* --------------------------------------*/
@@ -233,10 +246,10 @@ li {
 
 .dashboard-chart .list-chart {
     height: 500px;
-    padding-left: 100px;
 }
 .dashboard-tasks li{
     cursor: pointer;
+    overflow: hidden;
 }
 .dashboard-tasks .list-alert {
     float: right;
@@ -250,3 +263,39 @@ li {
 
 }
 /* --------------------------------------*/
+
+
+@media screen and (max-width: 992px) {
+
+    .navbar .navbar-input, .navbar .navbar-notifications{
+        visibility: hidden;
+    }
+    .navbar-notifications .mNavbar-list{
+        visibility: visible;
+        cursor: pointer;
+        float: right;
+    }
+
+    .dashboard-top-container {
+        grid-template-columns: 1fr;
+    }
+    .dashboard-top-container .dashboard-items{
+        margin-top: 10px;
+    }
+
+    .dashboard-bottom-comtainer{
+        grid-template-columns: 1fr;
+    }
+    .dashboard-chart{
+        grid-column: 1/2;
+        width: 100vw;
+        margin-bottom: 30px;
+        padding-right: 65px;
+    }
+    .dashboard-tasks{
+        grid-column: 1/2;
+        margin-bottom: 30px;
+        width: 100vw;
+        padding-right: 65px;
+    }
+}
